@@ -54,8 +54,6 @@
     array = array;
   };
 
-  performance.mark("start");
-
   const add = () => {
     time0 = performance.now();
 
@@ -78,13 +76,7 @@
 
   const editAll = () => {
     time0 = performance.now();
-    array.map((el) => ({
-      name: "Asia Kowalska",
-      id: el.id,
-      spec: el.spec,
-      date: el.date,
-      hour: el.hour,
-    }));
+    array.forEach((el) => (el.name = "Ania Kowalska"));
     array = array;
   };
 
