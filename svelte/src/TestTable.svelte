@@ -50,7 +50,8 @@
 
   const sort = () => {
     time0 = performance.now();
-    array = [...array.sort((a, b) => (a.name > b.name ? 1 : -1))];
+    array.sort((a, b) => (a.name > b.name ? 1 : -1));
+    array = array;
   };
 
   performance.mark("start");
@@ -72,20 +73,19 @@
 
   const remove = () => {
     time0 = performance.now();
-    array = [...array.slice(fields.NUMBER_TO_REMOVE, array.length)];
+    array = array.slice(fields.NUMBER_TO_REMOVE, array.length);
   };
 
   const editAll = () => {
     time0 = performance.now();
-    array = [
-      ...array.map((el) => ({
-        name: "Asia Kowalska",
-        id: el.id,
-        spec: el.spec,
-        date: el.date,
-        hour: el.hour,
-      })),
-    ];
+    array.map((el) => ({
+      name: "Asia Kowalska",
+      id: el.id,
+      spec: el.spec,
+      date: el.date,
+      hour: el.hour,
+    }));
+    array = array;
   };
 
   afterUpdate(async () => {
